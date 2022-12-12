@@ -23,6 +23,12 @@ body {
   justify-content: center;
 }
 
+.start-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 button {
   background: #4d5b9e;
   border-radius: 15px;

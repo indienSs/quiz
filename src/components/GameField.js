@@ -1,12 +1,11 @@
 import React from "react";
 
-function GameField() {
+function GameField({question, answers}) {
   return (
-    <div className="window">
-      <div className="question">
-        <h3></h3>
-        <p></p>
-        <div className="variants"></div>
+    <div className="question">
+      <h3>{question}</h3>
+      <div className="variants">
+        {answers}
       </div>
     </div>
   );
