@@ -1,12 +1,14 @@
 import React from "react";
 
-function GameField({question, answers}) {
+function GameField({ question, answers }) {
   return (
     <div className="question">
       <h3>{question}</h3>
-      <div className="variants">
-        {answers}
-      </div>
+      <ul className="variants">
+        {answers.map((answer, index) => (
+          <li key={index}>{answer}</li>
+        ))}
+      </ul>
     </div>
   );
 }

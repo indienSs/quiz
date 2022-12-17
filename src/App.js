@@ -20,15 +20,6 @@ function App() {
       })
     );
   }, []);
-  /**
-   * достать из даты вопрос и отобразить в игровом поле через пропс
-   * то же самое проделать с массивом ответов
-   */
-  console.log(quizData);
-
-  const quizQuestions = () => {
-    quizData.map(element => <GameField question={element.question} answers={element.answers[0]} />)
-  }
 
   return (
     <div className="app">
@@ -36,7 +27,7 @@ function App() {
         {!isStarted && (
           <StartGame handleClick={() => setIsStarted((prev) => !prev)} />
         )}
-        {isStarted && {quizQuestions}}
+        {isStarted && {quizData.map(element => <GameField question={element.question} answers={element.answers} />)}}
       </div>
     </div>
   );
