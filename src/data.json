@@ -13,7 +13,7 @@
       "category": "Art",
       "type": "multiple",
       "difficulty": "easy",
-      "question": "Who painted &quot;Swans Reflecting Elephants&quot;, &quot;Sleep&quot;, and &quot;The Persistence of Memory&quot;?",
+      "question": "Who painted Swans Reflecting Elephants, Sleep, and The Persistence of Memory?",
       "correct_answer": "Salvador Dali",
       "incorrect_answers": [
         "Jackson Pollock",
@@ -40,7 +40,7 @@
       "question": "Which painting was not made by Vincent Van Gogh?",
       "correct_answer": "The Ninth Wave",
       "incorrect_answers": [
-        "Caf&eacute; Terrace at Night",
+        "Cafe Terrace at Night",
         "Bedroom In Arles",
         "Starry Night"
       ]

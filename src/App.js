@@ -27,7 +27,7 @@ function App() {
         {!isStarted && (
           <StartGame handleClick={() => setIsStarted((prev) => !prev)} />
         )}
-        {isStarted && {quizData.map(element => <GameField question={element.question} answers={element.answers} />)}}
+        {isStarted && quizData.map(element => <GameField question={element.question} answers={element.answers} key={element.correctAnswer}/>)}
       </div>
     </div>
   );

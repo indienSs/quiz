@@ -44,3 +44,27 @@ button {
 .description {
   margin-top: 0;
 }
+
+.question {
+  margin: 0 20px;
+  font-size: 10px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.variants {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.variants > li {
+  border: solid gray 1px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
