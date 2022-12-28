@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function GameField({ question, answers, correctAnswer }) {
-  const [amountAnswers, setAmountAnswers] = useState(0);
-  const [indexAnswer, setIndexAnswer] = useState(-1);
+const Question = ({ question, answers, correctAnswer }) => {
+  const [indexAnswer, setIndexAnswer] = useState(0);
   const [color, setColor] = useState({});
+  const [chosen, setChosen] = useState(false);
 
   const correctColor = {
     backgroundColor: "#94D7A2",
@@ -15,6 +15,14 @@ function GameField({ question, answers, correctAnswer }) {
     border: "none",
   };
 
+  const onClickAnswer = (answer, index) => {
+    if (!chosen) {
+      setIndexAnswer(index);
+      setColor(answer === correctAnswer ? correctColor : incorrectColor);
+      setChosen(true);
+    }
+  };
+
   return (
     <div className="question">
       <h3>{question}</h3>
@@ -22,12 +30,7 @@ function GameField({ question, answers, correctAnswer }) {
         {answers.map((answer, index) => (
           <li
             key={answer}
-            onClick={() => {
-              setIndexAnswer(index);
-              setColor(
-                answer === correctAnswer ? correctColor : incorrectColor
-              );
-            }}
+            onClick={() => onClickAnswer(answer, index)}
             style={index === indexAnswer ? color : {}}
           >
             {answer}
@@ -36,6 +39,6 @@ function GameField({ question, answers, correctAnswer }) {
       </ul>
     </div>
   );
-}
+};
 
-export default GameField;
+export default Question;

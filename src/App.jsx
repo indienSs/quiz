@@ -23,20 +23,10 @@ function App() {
 
   return (
     <div className="app">
-      <div className="window">
-        {!isStarted && (
-          <StartGame handleClick={() => setIsStarted((prev) => !prev)} />
-        )}
-        {isStarted &&
-          quizData.map((element) => (
-            <GameField
-              question={element.question}
-              answers={element.answers}
-              correctAnswer={element.correctAnswer}
-              key={element.correctAnswer}
-            />
-          ))}
-      </div>
+      {!isStarted && (
+        <StartGame handleClick={() => setIsStarted((prev) => !prev)} />
+      )}
+      {isStarted && <GameField questions={quizData} />}
     </div>
   );
 }
