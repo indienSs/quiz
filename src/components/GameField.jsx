@@ -9,7 +9,7 @@ function GameField({ questions }) {
           question={element.question}
           answers={element.answers}
           correctAnswer={element.correctAnswer}
-          key={element.correctAnswer}
+          key={element.question}
         />
       ))}
     </div>

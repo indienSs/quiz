@@ -11,6 +11,7 @@ function StartGame({ handleClick }) {
             api
           </a>
         </p>
+
         <button onClick={handleClick}>Start quiz</button>
       </div>
     </div>
