@@ -1,11 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 import GameField from "./components/GameField";
 import StartGame from "./components/StartGame";
 
 function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [quizData, setQuizData] = useState([]);
+  const [countAnswers, setCountAnswers] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+
+  const counter = () => {
+    setCountAnswers((prev) => ++prev);
+  };
+
+  const zeroCounter = () => {
+    setCountAnswers(0);
+  };
+
+  const correctCounter = () => {
+    setCorrectAnswers((prev) => ++prev);
+  };
 
   useEffect(() => {
     axios
@@ -31,7 +46,16 @@ function App() {
   return (
     <div className="app">
       {!isStarted && <StartGame handleClick={() => setIsStarted(true)} />}
-      {isStarted && <GameField questions={quizData} />}
+      {isStarted && (
+        <GameField
+          questions={quizData}
+          counter={counter}
+          countAnswers={countAnswers}
+          zeroCounter={zeroCounter}
+          correctCounter={correctCounter}
+          correctAnswers={correctAnswers}
+        />
+      )}
     </div>
   );
 }

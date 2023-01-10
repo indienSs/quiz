@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const Question = ({ question, answers, correctAnswer }) => {
+const Question = ({
+  question,
+  answers,
+  correctAnswer,
+  counter,
+  correctCounter,
+}) => {
   const [indexAnswer, setIndexAnswer] = useState(0);
   const [color, setColor] = useState({});
   const [chosen, setChosen] = useState(false);
@@ -20,6 +26,10 @@ const Question = ({ question, answers, correctAnswer }) => {
       setIndexAnswer(index);
       setColor(answer === correctAnswer ? correctColor : incorrectColor);
       setChosen(true);
+      counter();
+      if (answer === correctAnswer) {
+        correctCounter();
+      }
     }
   };
 
