@@ -45,8 +45,9 @@ function App() {
 
   return (
     <div className="app">
-      {!isStarted && <StartGame handleClick={() => setIsStarted(true)} />}
-      {isStarted && (
+      {!isStarted ? (
+        <StartGame handleClick={() => setIsStarted(true)} />
+      ) : (
         <GameField
           questions={quizData}
           counter={counter}
